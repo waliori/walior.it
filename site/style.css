@@ -67,10 +67,11 @@ a:hover { color: var(--color-accent); }
 .videos .title { width: 50%; }
 .videos .num { width: 25%; text-align: left; color: var(--color-muted); }
 
-/* projects: two splits, then a tool as a row. A capture of a light interface is inverted first, so it reads as a phosphor screen, then tinted */
+/* projects: two splits, then a tool as a row. A capture of a light interface is inverted first, so it reads as a phosphor screen, then tinted; a capture already dark (data-tone) is only tinted */
 [data-kind="product"]:has(> img) { background: var(--color-paper-2); }
 [data-kind="product"] > img { filter: grayscale(1) invert(1) contrast(1.1); mix-blend-mode: normal; }
 [data-kind="product"]:has(> img)::before { background: var(--glyph-5); mix-blend-mode: multiply; }
+[data-kind="product"][data-tone="dark"] > img { filter: grayscale(1) contrast(1.1) brightness(1.15); }
 /* projects: two splits, then a tool as a row */
 .projects { padding-block: var(--section-gap-l) 0; }
 .projects h2 { margin-bottom: var(--space-2xl); }
