@@ -1,0 +1,11 @@
+# The waliori hub: static files only, served as Worker assets. Cloudflare Workers Builds deploys on every push to main:
+#   npx wrangler deploy
+# Preview first on the workers.dev address; the custom domains (walior.it, www.walior.it) are added as routes at the switch.
+name = "waliori-hub"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[assets]
+directory = "site"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"

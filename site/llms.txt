@@ -1,0 +1,11 @@
+# waliori
+
+> The home page of waliori, who films small builds (terminals, a desk, a keyboard, machines) for a YouTube channel and names each video as a path.
+
+- Channel: https://www.youtube.com/channel/UCEMDIemBABgR4RmRge88Nzg
+- X: https://x.com/waliori
+- Instagram: https://www.instagram.com/waliorit/
+- GitHub: https://github.com/waliori
+- Sailor's Log, a Black Desert ship planner: https://sail.walior.it/
+- Walid, a keyboard layout and its trainer: https://toucan.walior.it/
+- Contact: contact@walior.it
