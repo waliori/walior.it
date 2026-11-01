@@ -1,6 +1,6 @@
 /* Hallmark · shape: Index-First · genre: atmospheric · theme: Terminal (deal 1/3, seed waliori-hub-directory-listing-9aa1·2f378af2·2026-11-01·r0) · job: listen · draw: 870a77
  * hero: Ledge · nav: masthead · footer: mast · imagery: screenshots 3 (capture.mjs), baked as CRT frames · signature: the mark, four slashes typed in a row, printed from the page's own paths and resolving row by row
- * axes: dark/mono/chromatic-green · posture: committed · contrast: pass · fold: pass · v2.0.0
+ * axes: dark/mono/neutral (white phosphor, the Terminal theme without its green) · posture: committed · contrast: pass · fold: pass · v2.0.0
  * finish-review: subagent · 6 findings · 6 resolved · gap: none (sail recaptured on its map view; the contact band 96px under the tool row; the projects head without a count; the year on the ninth column; footer links padded to 24px; the mark 16px shorter at 1280 x 800 so the second row shows)
  * hero-review: fix · 4 findings · 4 resolved (the mark redrawn at 120 columns, row pitch 1.85, 80% of the container wide and left-aligned on the head's axis; the index rows on 3 and 9 columns) */
 /* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, a terminal theme on a terminal channel is the expected pairing; what no other page has is the mark set from its own eight path names and the listing of real paths, so the page leads with those and nothing else */
@@ -48,7 +48,7 @@ a:hover { color: var(--color-accent); }
 .row .line { color: var(--color-ink-2); }
 .row--primary { background: var(--color-accent); color: var(--color-accent-ink); border-bottom-color: var(--color-accent); }
 .row--primary .line { color: var(--color-accent-ink); }
-.row--primary:hover { background: var(--glyph-7); color: var(--color-accent-ink); }
+.row--primary:hover { background: var(--glyph-6); color: var(--color-accent-ink); }
 .row--primary:active { background: var(--glyph-5); }
 .row--primary:focus-visible { outline-color: var(--color-ink); }
 
@@ -71,6 +71,12 @@ a:hover { color: var(--color-accent); }
 .js .shot.is-seen > img { animation: crt 4s steps(1) infinite; }
 @keyframes crt { 0% { transform: none; opacity: 1; } 1.5% { transform: translateX(3px); opacity: 0.93; } 2.5% { transform: translateX(-2px); } 3.5% { transform: none; opacity: 1; } 52% { opacity: 0.97; } 54% { opacity: 1; } 100% { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .js .shot.is-seen > img { animation: none; } }
+/* the reel: on hover the frame cycles through more screens of the product; the next frame cuts in through three torn slices, then takes over */
+.shot { position: relative; }
+.shot > img.next { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; z-index: 2; }
+.shot.is-cut > img.next { animation: cut 220ms steps(3) forwards; }
+@keyframes cut { 0% { opacity: 1; clip-path: inset(0 0 62% 0); transform: translateX(-10px); } 33% { opacity: 1; clip-path: inset(38% 0 22% 0); transform: translateX(8px); } 66% { opacity: 1; clip-path: inset(78% 0 0 0); transform: translateX(-4px); } 100% { opacity: 1; clip-path: inset(0); transform: none; } }
+@media (prefers-reduced-motion: reduce) { .shot.is-cut > img.next { animation: none; opacity: 1; } }
 /* projects: two splits, then a tool as a row */
 .projects { padding-block: var(--section-gap-l) 0; }
 .projects h2 { margin-bottom: var(--space-2xl); }

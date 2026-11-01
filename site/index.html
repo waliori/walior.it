@@ -78,21 +78,21 @@
           <h3><a href="https://sail.walior.it/" target="_blank" rel="noopener">sail.walior.it</a></h3>
           <p>Ship parts, quests, barter routes and the map, for Black Desert sailors.</p>
         </div>
-        <a class="shot" href="https://sail.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="sail" data-kind="product" data-alt="Sailor's Log, the map of where to sail"><img src="images/sail.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+        <a class="shot" href="https://sail.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="sail" data-kind="product" data-frames="images/sail-2.webp,images/sail-3.webp,images/sail-4.webp,images/sail-5.webp" data-alt="Sailor's Log, the map of where to sail"><img src="images/sail-1.webp" width="1600" height="1000" alt="" loading="lazy"></a>
       </article>
       <article class="split split--flip">
         <div class="split__text">
           <h3><a href="https://toucan.walior.it/" target="_blank" rel="noopener">toucan.walior.it</a></h3>
           <p>A split keyboard layout annealed on my own words, and a trainer to learn it.</p>
         </div>
-        <a class="shot" href="https://toucan.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="toucan" data-kind="product" data-alt="The Walid layout on the Toucan2 board"><img src="images/toucan.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+        <a class="shot" href="https://toucan.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="toucan" data-kind="product" data-frames="images/toucan-2.webp,images/toucan-3.webp,images/toucan-5.webp" data-alt="The Walid layout on the Toucan2 board"><img src="images/toucan-1.webp" width="1600" height="1000" alt="" loading="lazy"></a>
       </article>
       <article class="split">
         <div class="split__text">
           <h3><a href="https://ayat.network/" target="_blank" rel="noopener">ayat.network</a></h3>
           <p>A tool I keep: the Qurʾān text with its word morphology and six classical dictionaries.</p>
         </div>
-        <a class="shot" href="https://ayat.network/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="ayat" data-kind="product" data-alt="ayat.network, the word network of a verse"><img src="images/ayat.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+        <a class="shot" href="https://ayat.network/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="ayat" data-kind="product" data-frames="images/ayat-2.webp,images/ayat-4.webp" data-alt="ayat.network, the word network of a verse"><img src="images/ayat-1.webp" width="1600" height="1000" alt="" loading="lazy"></a>
       </article>
     </div>
   </section>
@@ -125,7 +125,17 @@
     last = el; el.classList.add('hot'); setTimeout(() => el.classList.remove('hot'), 700);
   }, { passive: true }));
   const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('is-seen', e.isIntersecting)));
-  document.querySelectorAll('.shot').forEach((el) => io.observe(el));
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.shot').forEach((el) => {
+    io.observe(el);
+    const list = (el.dataset.frames || '').split(',').filter(Boolean); if (!list.length) return;
+    const first = el.querySelector('img'); const frames = [first.src, ...list]; let at = 0, timer = null, loaded = false;
+    const next = document.createElement('img'); next.className = 'next'; next.alt = ''; next.src = first.src; next.width = first.width; next.height = first.height; el.appendChild(next);
+    const show = () => { at = (at + 1) % frames.length; next.src = frames[at]; el.classList.remove('is-cut'); void next.offsetWidth; el.classList.add('is-cut'); setTimeout(() => { first.src = frames[at]; el.classList.remove('is-cut'); }, still ? 0 : 220); };
+    const start = () => { if (timer) return; if (!loaded) { loaded = true; list.forEach((u) => { const i = new Image(); i.src = u; }); } timer = setInterval(show, 900); show(); };
+    const stop = () => { clearInterval(timer); timer = null; at = 0; first.src = frames[0]; el.classList.remove('is-cut'); };
+    el.addEventListener('pointerenter', start); el.addEventListener('pointerleave', stop); el.addEventListener('pointercancel', stop);
+  });
 })();
 window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
 document.querySelectorAll('[data-slot] img').forEach((i) => { if (i.complete && !i.naturalWidth) i.remove(); else i.addEventListener('error', () => i.remove(), { once: true }); });

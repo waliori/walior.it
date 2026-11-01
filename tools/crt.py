@@ -8,7 +8,7 @@ invert = "--invert" in sys.argv
 seed = int(sys.argv[sys.argv.index("--seed") + 1]) if "--seed" in sys.argv else 1
 random.seed(seed)
 W, H = 1600, 1000
-PAPER, PHOSPHOR, HOT = "#070a07", "#c4ccc0", "#eef3ea"   # paper, a white phosphor barely tinted toward the ink, and a hotter highlight for bloom
+PAPER, PHOSPHOR, HOT = "#0a0b0a", "#c5c7c4", "#f0f2ef"   # paper, a white phosphor, and a hotter highlight for bloom
 tmp = tempfile.mkdtemp()
 grey = os.path.join(tmp, "grey.png"); scan = os.path.join(tmp, "scan.png")
 run = lambda *a: subprocess.run(["magick", *a], check=True)

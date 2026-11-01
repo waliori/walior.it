@@ -5,19 +5,19 @@ The locked system. Every Hallmark run reads this first and pages share it. Chang
 ## System
 - Genre: atmospheric
 - Shape of the first page: Index-First (a directory listing), hero posture Ledge
-- Theme: Terminal
-- Axes: dark/mono/chromatic-green · posture: committed
+- Theme: Terminal, without its green: a white-phosphor terminal. One neutral ramp from the paper to the ink, no second hue anywhere
+- Axes: dark/mono/neutral · posture: committed
 
 ## The mark
-Four slashes typed in a row, `\/\/`, read as a w. Vector in `material/mark.svg` (currentColor strokes, 64 viewBox, round caps). On the page it is printed as a grid of characters taken from the page's own path names, in the eight glyph tokens, resolving row by row. The favicon (`site/favicon.svg`) is the same four strokes in the accent on the paper. The old W avatar is reference only.
+Four slashes typed in a row, `\/\/`, read as a w. Vector in `material/mark.svg` (currentColor strokes, 64 viewBox, round caps). On the page it is printed as a grid of characters taken from the page's own path names, in the eight glyph tokens, resolving row by row. The favicon (`site/favicon.svg`) is the same four strokes in the ink on the paper. The old W avatar is reference only.
 
 ## Tokens
 `site/tokens.css` is the source of truth. The roles:
 ```css
 :root {
-  --color-paper: oklch(12.5% 0.012 150);  --color-paper-2: oklch(16% 0.016 150);  --color-paper-3: oklch(20.5% 0.022 150);
-  --color-ink: oklch(94% 0.03 140);  --color-ink-2: oklch(82% 0.05 142);  --color-muted: oklch(64% 0.06 145);  --color-rule: oklch(27% 0.028 148);  --color-rule-2: oklch(38% 0.045 146);
-  --color-accent: oklch(87% 0.2 142);  --color-accent-ink: oklch(14% 0.02 150);  --color-focus: oklch(87% 0.2 142);  --color-accent-wash: oklch(23% 0.06 145);
+  --color-paper: oklch(11% 0.004 150);  --color-paper-2: oklch(14.5% 0.005 150);  --color-paper-3: oklch(19% 0.006 150);
+  --color-ink: oklch(95% 0.006 150);  --color-ink-2: oklch(82% 0.006 150);  --color-muted: oklch(64% 0.006 150);  --color-rule: oklch(26% 0.005 150);  --color-rule-2: oklch(37% 0.006 150);
+  --color-accent: oklch(96% 0.008 150);  --color-accent-ink: oklch(12% 0.004 150);  --color-focus: oklch(96% 0.008 150);  --color-accent-wash: oklch(24% 0.006 150);
   --glyph-0 … --glyph-7: the eight lightness steps a glyph picture is printed in;
   --font-display: "Martian Mono", ui-monospace, monospace;  --font-body: var(--font-display);  --font-outlier: var(--font-display);
   --radius-card: 0;  --radius-pill: 0;  --rule-hair: 1px;  --shadow-card: none;
@@ -30,10 +30,10 @@ The spacing scale, the type scale, the easings and the durations are the scaffol
 One family, Martian Mono, weights 400 and 500 only. Heads at width 112.5%, text at 87.5%. Paths are set as titles (`--text-title`, 500, wide). Labels in `--color-muted`, sentence case, untracked. No italics, no caps.
 
 ## Surfaces and pictures
-One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. The mark is printed in type (`tools/glyphs.py`). Product captures are real screenshots baked into phosphor CRT frames by `tools/crt.py` (grey, inverted when the interface is light, noise, white phosphor, bloom, scanlines, a few torn bands, barrel curvature, vignette), inside a 1px rule; the page adds only a faint flicker. No photographs.
+One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. The mark is printed in type (`tools/glyphs.py`). Product captures are real screenshots baked into phosphor CRT frames by `tools/crt.py` (grey, inverted when the interface is light, noise, white phosphor, bloom, scanlines, a few torn bands, barrel curvature, vignette), inside a 1px rule. On hover a frame cycles through more screens of its product (`tools/frames.mjs` captures them), each cut in through three torn slices; the page adds a faint flicker. No photographs.
 
 ## Controls
-- Primary: a full-width accent block (`--color-accent` on `--color-accent-ink`), square, 72px tall, state in `steps(1)`.
+- Primary: a full-width block of the ink (`--color-accent`, near white) with the paper for text, square, 72px tall, state in `steps(1)`.
 - Secondary: a 1px `--color-ink-2` border, 48px tall, same square corners.
 - Links: `--color-ink-2`, dotted underline, accent on hover; a selected row takes `--color-accent-wash`.
 
