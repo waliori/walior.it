@@ -1,5 +1,5 @@
 /* Hallmark · shape: Index-First · genre: atmospheric · theme: Terminal (deal 1/3, seed waliori-hub-directory-listing-9aa1·2f378af2·2026-11-01·r0) · job: listen · draw: 870a77
- * hero: Ledge · nav: masthead · footer: mast · imagery: screenshots 3 (capture.mjs), tinted · signature: the mark, four slashes typed in a row, printed from the page's own paths and resolving row by row
+ * hero: Ledge · nav: masthead · footer: mast · imagery: screenshots 3 (capture.mjs), baked as CRT frames · signature: the mark, four slashes typed in a row, printed from the page's own paths and resolving row by row
  * axes: dark/mono/chromatic-green · posture: committed · contrast: pass · fold: pass · v2.0.0
  * finish-review: subagent · 6 findings · 6 resolved · gap: none (sail recaptured on its map view; the contact band 96px under the tool row; the projects head without a count; the year on the ninth column; footer links padded to 24px; the mark 16px shorter at 1280 x 800 so the second row shows)
  * hero-review: fix · 4 findings · 4 resolved (the mark redrawn at 120 columns, row pitch 1.85, 80% of the container wide and left-aligned on the head's axis; the index rows on 3 and 9 columns) */
@@ -64,11 +64,13 @@ a:hover { color: var(--color-accent); }
 .videos .title { width: 50%; }
 .videos .num { width: 25%; text-align: left; color: var(--color-muted); }
 
-/* projects: three splits. A capture of a light interface is inverted first, so it reads as a phosphor screen, then tinted; a capture already dark (data-tone) is only tinted */
-[data-kind="product"]:has(> img) { background: var(--color-paper-2); }
-[data-kind="product"] > img { filter: grayscale(1) invert(1) contrast(1.1); mix-blend-mode: normal; }
-[data-kind="product"]:has(> img)::before { background: var(--glyph-5); mix-blend-mode: multiply; }
-[data-kind="product"][data-tone="dark"] > img { filter: grayscale(1) contrast(1.1) brightness(1.15); }
+/* projects: three splits. Each capture is baked into a phosphor CRT frame by tools/crt.py (scanlines, bloom, curvature, torn bands); the page only adds a faint flicker and a jitter every four seconds while the frame is in view */
+[data-kind="product"]:has(> img) { background: var(--color-paper); }
+[data-kind="product"] > img { filter: none; mix-blend-mode: normal; }
+[data-kind="product"]:has(> img)::before { content: none; }
+.js .shot.is-seen > img { animation: crt 4s steps(1) infinite; }
+@keyframes crt { 0% { transform: none; opacity: 1; } 1.5% { transform: translateX(3px); opacity: 0.93; } 2.5% { transform: translateX(-2px); } 3.5% { transform: none; opacity: 1; } 52% { opacity: 0.97; } 54% { opacity: 1; } 100% { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .js .shot.is-seen > img { animation: none; } }
 /* projects: two splits, then a tool as a row */
 .projects { padding-block: var(--section-gap-l) 0; }
 .projects h2 { margin-bottom: var(--space-2xl); }

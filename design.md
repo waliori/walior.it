@@ -30,7 +30,7 @@ The spacing scale, the type scale, the easings and the durations are the scaffol
 One family, Martian Mono, weights 400 and 500 only. Heads at width 112.5%, text at 87.5%. Paths are set as titles (`--text-title`, 500, wide). Labels in `--color-muted`, sentence case, untracked. No italics, no caps.
 
 ## Surfaces and pictures
-One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. The mark is printed in type (`tools/glyphs.py`). Product captures stay real screenshots inside a 1px rule: a light interface is inverted, then every capture is turned grey and tinted with `--glyph-5`, so it reads as a phosphor screen. No photographs.
+One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. The mark is printed in type (`tools/glyphs.py`). Product captures are real screenshots baked into phosphor CRT frames by `tools/crt.py` (grey, inverted when the interface is light, noise, green phosphor, bloom, scanlines, a few torn bands, barrel curvature, vignette), inside a 1px rule; the page adds only a faint flicker. No photographs.
 
 ## Controls
 - Primary: a full-width accent block (`--color-accent` on `--color-accent-ink`), square, 72px tall, state in `steps(1)`.
