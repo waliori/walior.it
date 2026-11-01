@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-"""Prints the page's three glyph pictures into site/index.html: the mark (four slashes, computed) and the two
-captures (sampled from material/screens with ImageMagick), each cell a character of the product's own text.
-Run from the repository root after a recapture: python3 tools/glyphs.py"""
+"""Prints the mark into site/index.html: four slashes typed in a row, each cell a character of the page's own paths.
+Run from the repository root: python3 tools/glyphs.py"""
 import html, math, re, subprocess
 CELL = 1.85            # a cell is 1.85 times as tall as wide (Martian Mono at 87.5% width, line-height 1.2)
-MARK_COLS, SHOT_COLS = 120, 130
-MAX_RUN = {"mark": 1, "shot": 2}   # sloplint reads a text node past two characters as words; keep runs short
+MARK_COLS = 120
+MAX_RUN = {"mark": 1}   # sloplint reads a text node past two characters as words; keep runs short
 
 def rows_to_html(cells, text, kind):
     k = 0; out = []
@@ -46,31 +45,10 @@ def mark():
     lines = rows_to_html(grid, text, "mark")
     return "".join(f'<b style="--r:{i}">{l}</b>' for i, l in enumerate(lines)), rows
 
-def shot(path, text, negate, gamma, floor, crop="2880x1800+0+0"):
-    rows = round(SHOT_COLS * 10 / 16 / CELL)
-    args = ["magick", path, "-gravity", "north", "-crop", crop, "+repage", "-colorspace", "gray"]
-    if negate: args.append("-negate")
-    args += ["-normalize", "-resize", f"{SHOT_COLS}x{rows}!", "-depth", "8", "gray:-"]
-    raw = subprocess.run(args, capture_output=True, check=True).stdout
-    grid = []
-    for r in range(rows):
-        row = []
-        for c in range(SHOT_COLS):
-            v = (raw[r*SHOT_COLS + c] / 255) ** gamma
-            row.append(0 if v < floor else min(8, 1 + int((v-floor)/(1-floor)*8)))
-        grid.append(row)
-    return "\n".join(rows_to_html(grid, text, "shot"))
-
-SAIL = "SAILOR'SLOGPlanBuildsInventoryTreeWorkshopToGetMapQuestsShipBarterCommunityCrowCoinsSilverTheSailorWheretosailBarterersHabitatsWharvesIslands"
-TOUCAN = "WLDQSNTVGRMJZOYAEIXUBCPKHFALAYOUTANNEALEDONMYOWNWORDSTABSHIFTESCCTRLNAVSPACEENTERSYMSUPERBKSPALT"
-
 p = "site/index.html"; s = open(p).read()
 m, mark_rows = mark()
 s = re.sub(r'(<figure class="mark"[^>]*>\s*<pre aria-hidden="true">).*?(</pre>)', lambda x: x.group(1) + m + x.group(2), s, count=1, flags=re.S)
-for slot, body in (("sail", shot("material/screens/sail-map-desktop.png", SAIL, True, 1.0, 0.58, "1648x1030+900+770")),
-                   ("toucan", shot("material/screens/toucan-home-desktop.png", TOUCAN, False, 1.0, 0.86, "1900x1188+490+50"))):
-    s = re.sub(rf'(data-slot="{slot}"[^>]*><pre aria-hidden="true">).*?(</pre>)', lambda x: x.group(1) + body + x.group(2), s, count=1, flags=re.S)
 open(p, "w").write(s)
 c = open("site/style.css").read()
 c = re.sub(r"--mark-rows: \d+;", f"--mark-rows: {mark_rows};", c); open("site/style.css", "w").write(c)
-print("glyph pictures written; mark rows", mark_rows, "; index.html", len(s), "bytes")
+print("mark written; rows", mark_rows, "; index.html", len(s), "bytes")
