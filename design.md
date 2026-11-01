@@ -30,7 +30,7 @@ The spacing scale, the type scale, the easings and the durations are the scaffol
 One family, Martian Mono, weights 400 and 500 only. Heads at width 112.5%, text at 87.5%. Paths are set as titles (`--text-title`, 500, wide). Labels in `--color-muted`, sentence case, untracked. No italics, no caps.
 
 ## Surfaces and pictures
-One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. A capture of a light interface is inverted, then tinted with `--glyph-5`, so it reads as a phosphor screen inside a 1px rule. Photographs, if ever, in the theme's duotone, one a page at most.
+One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. Every picture is printed in type: a capture is cropped to its silhouette (the map, the board), sampled to 130 columns and printed as glyphs of the product's own words by `tools/glyphs.py`, inside a 1px rule. No photographs, no screenshots as images.
 
 ## Controls
 - Primary: a full-width accent block (`--color-accent` on `--color-accent-ink`), square, 72px tall, state in `steps(1)`.
