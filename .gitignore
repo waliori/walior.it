@@ -1,3 +1,4 @@
 .hallmark/shots/
 node_modules/
 site/.hallmark/
+private/
