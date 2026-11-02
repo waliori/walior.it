@@ -54,6 +54,9 @@ a:hover { color: var(--color-accent); }
 .row--primary:hover { background: var(--glyph-6); color: var(--color-accent-ink); }
 .row--primary:active { background: var(--glyph-5); }
 .row--primary:focus-visible { outline-color: var(--color-ink); }
+/* one cursor line at a time: while another row is under the pointer or focused, /youtube gives up its block */
+.index:has(.row:not(.row--primary):is(:hover, :focus-visible)) .row--primary:not(:hover, :focus-visible) { background: transparent; color: var(--color-ink); border-bottom-color: var(--color-rule); }
+.index:has(.row:not(.row--primary):is(:hover, :focus-visible)) .row--primary:not(:hover, :focus-visible) .line { color: var(--color-ink-2); }
 
 /* videos: the log. Rows on the left, one row per video with its id as a hash; the monitor on the right shows the thumbnail of the row under the pointer, cutting between tapes */
 .videos { padding-block: var(--section-gap) 0; }
