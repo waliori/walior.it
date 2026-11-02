@@ -7,9 +7,10 @@ The waliori hub: one page that points at the channel, the accounts, the videos, 
 - `site/` is everything the Worker serves: `index.html`, `style.css`, `tokens.css` and `base.css`, the frames in `images/`, the share card `og.png`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `llms.txt`, and the `_headers` and `_redirects` files that Cloudflare reads.
 - `videos.json` lists the videos (path, title, upload date, YouTube id), newest first. `repos.json` holds what the GitHub API returned for the eight repositories (stars, last push, languages, a year of weekly commit counts). `links.json` holds the account and project addresses.
 - `design.md` is the locked design system: the tokens, the type, the mark, the objects on the page, and the one exception to the monochrome (colour on hover).
-- `material/` is the source material: the old avatar, the raw captures in `screens/`, the thumbnails in `thumbs/`, the vector mark and the share card source.
+- `material/` is the source material: the old avatar, the raw captures in `screens/`, the thumbnails in `thumbs/`, the vector mark, the share card source, and `profile/` (the avatar and the two banners, rendered from `avatar.html` and `banner.html`).
 - `tools/` regenerates the pictures:
   - `frames.mjs` captures several screens of each product into `material/screens/` (needs `puppeteer-core`, pointed at with `PUPPETEER_PATH`, and Chrome via `CHROME_PATH`).
+  - `still.mjs` renders one HTML file at a given size, for the share card and the profile images (same two variables).
   - `crt.py` bakes one capture into a CRT frame with ImageMagick: grey or colour, inverted for a light interface, noise, bloom, scanlines, a few torn bands, a barrel curve and a vignette.
   - `bake-all.sh` runs `crt.py` over every frame the page uses, three at a time with a thread cap. Pass a substring to bake only some, for example `-c.webp` for the colour variants.
   - `glyphs.py` prints the mark into `index.html` as a grid of characters taken from the page's own paths.
