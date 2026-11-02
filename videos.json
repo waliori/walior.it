@@ -1,50 +1,58 @@
 [
   {
+    "path": "/WORKSPACE",
+    "title": "Dark academia home office makeover",
+    "year": 2025,
+    "date": "2025-11-14",
+    "id": "QKLBYemtNXA"
+  },
+  {
     "path": "/MAIN",
     "title": "Smart standing desk: the one-year IKEA hack build",
-    "year": 2025,
+    "year": 2024,
+    "date": "2024-05-17",
     "id": "PKzvHBzcGJ4"
   },
   {
     "path": "/LAB/PRINT",
     "title": "Ender 3 upgrade: glass bed, CR Touch and OctoPrint",
-    "year": 2024,
+    "year": 2023,
+    "date": "2023-04-22",
     "id": "nELf7EdYciM"
   },
   {
     "path": "/LINK",
     "title": "Coiled aviator cables from spare USB cables",
     "year": 2023,
+    "date": "2023-02-02",
     "id": "1AdKQji42eQ"
   },
   {
     "path": "/ROOT",
     "title": "Degoogled Pixel: CalyxOS in ten minutes",
-    "year": 2023,
+    "year": 2022,
+    "date": "2022-12-08",
     "id": "coTsBt4sGj0"
   },
   {
     "path": "/STREAM",
     "title": "Jellyfin, the free Plex alternative",
     "year": 2022,
+    "date": "2022-11-18",
     "id": "QCq3e4105g0"
   },
   {
     "path": "/SHELL/SYNC",
     "title": "Extend your custom terminal to WSL and Bash",
     "year": 2022,
+    "date": "2022-10-30",
     "id": "Yw0kYV3bD4c"
   },
   {
     "path": "/SHELL/INIT",
     "title": "Starship, Pywal and PSReadLine",
     "year": 2022,
+    "date": "2022-10-20",
     "id": "bsZcSO0RGVQ"
-  },
-  {
-    "path": "/WORKSPACE",
-    "title": "Dark academia home office makeover",
-    "year": 2022,
-    "id": "QKLBYemtNXA"
   }
 ]
