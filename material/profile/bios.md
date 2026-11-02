@@ -1,39 +1,40 @@
 # Profile text
 
-Pasted by hand into each profile. Limits: X 160 characters, Instagram 150, YouTube 1000.
+Pasted by hand into each profile on 2 November 2026. Limits: X 160 characters (a URL counts 23), Instagram 150, YouTube 1000. Both fields for the link hold https://walior.it. The short bios say who this is and where it goes; the inventory stays on the site.
 
-## X (bio)
+## X (bio), the lines offered
 
-Every build becomes a video, named like a path. Short notes here between two videos. Keyboard, desk, terminal, self-hosting. The rest: walior.it
+I'm building my entire computing environment from scratch: hardware, software, workspace, tools. One module at a time, one video each. walior.it
 
-Website field: https://walior.it
+Making every layer of my own computer, from the desk up: keyboard, machine, OS, tools. Each layer becomes a video when it works. walior.it
 
-## Instagram (bio)
+One person, one computing environment, every layer built by hand and filmed. Keyboard, machine, OS, workspace. walior.it
 
-Stills from the desk and the bench. Each build becomes a video, named like a path. The rest is at walior.it
+## Instagram (bio), the lines offered
 
-Link field: https://walior.it
+Building my own computing environment from scratch, every layer of it. What the camera catches between the videos. walior.it
+
+Everything around my computer, made by hand: the desk, the keyboard, the machine itself. Stills while it's being built. walior.it
 
 ## YouTube (About)
 
-Everything I make, by path: walior.it
+walior.it — everything, by path.
 
-I'm building my whole computing environment myself: hardware, software, workspace, tools. Each build becomes a video, named like a path.
+I'm building my entire computing environment from scratch — hardware, software, workspace, tools. Every video is a module in that system.
 
-/SHELL  terminal setup
-/STREAM  self-hosted media
-/ROOT  a degoogled phone
-/LINK  handmade cables
-/LAB/PRINT  3D printing
-/MAIN  the smart standing desk, a one-year build
-/WORKSPACE  dark academia home office
-more paths loading.
+/SHELL — terminal setup
+/STREAM — self-hosted media
+/ROOT — device liberation
+/LINK — handmade cables
+/LAB/PRINT — 3D printing & fabrication
+/MAIN — smart standing desk (1-year build)
+/WORKSPACE — dark academia home office
+/MACHINE — the computer itself, next
+...more modules loading.
 
-Data engineer by day. Maker, 3D printer and tinkerer by night. Based in Quebec, Canada.
+Data engineer by day. Maker, 3D printer, and tinkerer by night. Based in Quebec, Canada.
 
-Everything is open source: github.com/waliori
-Short notes between two videos: x.com/waliori
-Stills: instagram.com/waliorit
-For anything else: contact@walior.it
+All projects are open source: github.com/waliori
+Everything else: walior.it
 
-Links section, first link: walior.it (the hub), then GitHub, X, Instagram.
+Links section: walior.it first, then GitHub, X, Instagram.
