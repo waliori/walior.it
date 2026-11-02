@@ -24,4 +24,4 @@ Edit `videos.json`, `repos.json` or the markup in `site/index.html` directly; th
 
 ## Deploy
 
-Cloudflare Workers Builds deploys on every push to `main` with `npx wrangler deploy`; `wrangler.toml` serves `site/` as static assets. The custom domains are added as routes at the switch from the old host.
+Cloudflare Workers Builds deploys on every push to `main` with `npx wrangler deploy`; `wrangler.toml` serves `site/` as static assets. `walior.it` and `www.walior.it` are the Worker's custom domains; `worker.mjs` sends www to the apex.
