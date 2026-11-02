@@ -1,6 +1,7 @@
 /* Hallmark · shape: Index-First · genre: atmospheric · theme: Terminal (deal 1/3, seed waliori-hub-directory-listing-9aa1·2f378af2·2026-11-01·r0) · job: listen · draw: 870a77
  * hero: Ledge · nav: masthead · footer: mast · imagery: screenshots 12 and 8 thumbnails (capture.mjs, i.ytimg.com), baked as CRT frames · signature: the mark, four slashes typed in a row, printed from the page's own paths and resolving row by row
  * axes: dark/mono/neutral (white phosphor, the Terminal theme without its green) · posture: committed · contrast: pass · fold: pass · v2.0.0
+ * finish-review 3 (the heads, the mark, the commit weeks): subagent · recapture (the full-page pass dropped the mark; measured live at 360px on a 5000px viewport) · 7 findings · 7 resolved (stars on one line on the phone, the cells packed and the quiet week a step dimmer, /github as the head over /github/<name>, the mark 40px shorter so the fourth row sits whole at 1440, the name column at 38%, the hover colour recorded in design.md)
  * finish-review 2 (the videos log and the repositories): subagent · 7 findings · 7 resolved (the phone monitor relative, the facts on one line with their words, the monitor at 4:3 on seven columns, the bar with its own label and no legend, the repos as rows of a tool's output with the name as a path, the OSD on its own strip, the full eleven-character id)
  * finish-review: subagent · 6 findings · 6 resolved · gap: none (sail recaptured on its map view; the contact band 96px under the tool row; the projects head without a count; the year on the ninth column; footer links padded to 24px; the mark 16px shorter at 1280 x 800 so the second row shows)
  * hero-review: fix · 4 findings · 4 resolved (the mark redrawn at 120 columns, row pitch 1.85, 80% of the container wide and left-aligned on the head's axis; the index rows on 3 and 9 columns) */
@@ -10,7 +11,7 @@
 @import url("./tokens.css");
 @import url("./base.css");
 
-:root { --mark-h: min(48dvh, 480px); --mark-rows: 29; --row-h: 72px; }
+:root { --mark-h: min(34dvh, 320px); --mark-rows: 29; --row-h: 72px; }
 body { font-stretch: var(--stretch-body); font-variant-numeric: tabular-nums; }
 h1, h2, h3 { font-weight: var(--display-weight); font-stretch: var(--stretch-display); letter-spacing: var(--tracking-display); line-height: 1.12; }
 a { color: var(--color-ink-2); text-decoration-style: dotted; }
@@ -27,7 +28,7 @@ a:hover { color: var(--color-accent); }
 
 /* hero, a ledge: the mark above, the head at its base, the first row of the index */
 .hero .container { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); padding-block: var(--space-xl) 0; }
-.mark { grid-column: 1 / -1; margin: 0; display: flex; justify-content: flex-start; container-type: inline-size; overflow: clip; }
+.mark { grid-column: 1 / -1; margin: 0; display: flex; justify-content: center; container-type: inline-size; overflow: clip; }
 .mark pre { margin: 0; font-family: var(--font-display); font-weight: 400; font-stretch: var(--stretch-body); font-size: min(calc(var(--mark-h) / var(--mark-rows) / 1.2), calc(100cqw / 120 / 0.65)); line-height: 1.2; white-space: pre; }
 .mark b { display: block; font-weight: inherit; }
 .mark i { font-style: normal; }
@@ -55,7 +56,8 @@ a:hover { color: var(--color-accent); }
 
 /* videos: the log. Rows on the left, one row per video with its id as a hash; the monitor on the right shows the thumbnail of the row under the pointer, cutting between tapes */
 .videos { padding-block: var(--section-gap) 0; }
-.videos h2 { margin-bottom: var(--space-2xl); }
+.videos h2, .repos h2, .projects h2 { margin-bottom: var(--space-md); }
+.videos .lead, .repos .lead, .projects .lead { margin-bottom: var(--space-2xl); color: var(--color-ink-2); }
 .log { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: start; }
 .log__rows { grid-column: 1 / 6; margin: 0; padding: 0; list-style: none; border-top: var(--rule-hair) solid var(--color-rule); }
 .log__rows a { display: grid; grid-template-columns: 11ch minmax(0, 1fr) 4ch; grid-template-rows: auto auto; column-gap: var(--space-md); align-items: baseline; padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); color: var(--color-ink); text-decoration: none; transition: background-color var(--dur-micro) steps(1); }
@@ -72,20 +74,24 @@ a:hover { color: var(--color-accent); }
 .monitor.is-cut > img.next { animation: cut 220ms steps(3) forwards; }
 @media (prefers-reduced-motion: reduce) { .monitor.is-cut > img.next { animation: none; opacity: 1; } }
 
-/* repositories: rows read like a tool's output. The name as a path, the description under it, the language mix as twenty marks with its own label, the stars and the last push on the right */
+/* repositories: a year of commits as fifty-two glyph cells per row, a dot for a quiet week up to a hash for five commits or more; the name as a path with its line beneath, the stars and the language on the right */
 .repos { padding-block: var(--section-gap-l) 0; }
-.repos h2 { margin-bottom: var(--space-2xl); }
-.ls { margin: 0; padding: 0; list-style: none; border-top: var(--rule-hair) solid var(--color-rule); }
-.ls li { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr); column-gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
-.ls h3 { grid-column: 1; font-size: var(--text-title); }
-.ls h3 a { color: var(--color-ink); }
-.ls h3 a:hover { color: var(--color-ink-2); }
-.ls__desc { grid-column: 2; grid-row: 1; color: var(--color-ink-2); }
-.ls__lang { grid-column: 2; grid-row: 2; margin-top: var(--space-xs); display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); align-items: baseline; }
-.bar { font-weight: 500; white-space: pre; color: var(--color-ink); }
-.bar .l1 { color: var(--color-ink-2); } .bar .l2 { color: var(--color-muted); } .bar .l3 { color: var(--color-rule-2); }
-.ls__legend { color: var(--color-muted); white-space: nowrap; }
-.ls__facts { grid-column: 3; grid-row: 1; display: flex; justify-content: flex-end; gap: var(--space-lg); color: var(--color-muted); white-space: nowrap; }
+.ls { width: 100%; border-collapse: collapse; }
+.ls th { text-align: left; font-weight: 400; }
+.ls thead th { padding: 0 var(--space-lg) var(--space-sm) 0; font-size: var(--text-sm); color: var(--color-muted); border-bottom: var(--rule-hair) solid var(--color-rule-2); white-space: nowrap; }
+.ls tbody th, .ls td { padding: var(--space-lg) var(--space-lg) var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
+.ls tbody th { width: 38%; }
+.ls tbody th a { display: block; font-size: var(--text-title); font-weight: var(--display-weight); font-stretch: var(--stretch-display); color: var(--color-ink); }
+.ls tbody th a:hover { color: var(--color-ink-2); }
+.ls__desc { display: block; margin-top: var(--space-2xs); color: var(--color-ink-2); }
+.ls__year { width: 40%; }
+.weeks { display: block; font-weight: 500; white-space: nowrap; }
+.weeks i { font-style: normal; }
+.weeks .w0 { color: var(--color-rule); } .weeks .w1 { color: var(--color-muted); } .weeks .w2 { color: var(--color-ink-2); } .weeks .w3 { color: var(--color-ink); }
+.ls__sum { display: block; margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-muted); }
+.ls td.num { width: 8%; text-align: right; color: var(--color-ink); }
+.ls th.num { text-align: right; }
+.ls__lang { width: 14%; padding-right: 0; color: var(--color-muted); }
 
 /* projects: three splits. Each capture is baked into a phosphor CRT frame by tools/crt.py (scanlines, bloom, curvature, torn bands); the page only adds a faint flicker and a jitter every four seconds while the frame is in view */
 [data-kind="product"]:has(> img) { background: var(--color-paper); }
@@ -102,7 +108,6 @@ a:hover { color: var(--color-accent); }
 @media (prefers-reduced-motion: reduce) { .shot.is-cut > img.next { animation: none; opacity: 1; } }
 /* projects: two splits, then a tool as a row */
 .projects { padding-block: var(--section-gap-l) 0; }
-.projects h2 { margin-bottom: var(--space-2xl); }
 .split { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: center; padding-block: var(--space-2xl); border-top: var(--rule-hair) solid var(--color-rule); }
 .split__text { grid-column: 1 / 6; }
 .split .shot { grid-column: 6 / -1; }
@@ -131,7 +136,7 @@ a:hover { color: var(--color-accent); }
 .foot__line { margin-top: var(--space-2xl); font-size: var(--text-sm); color: var(--color-muted); }
 
 @media (max-width: 60rem) {
-  :root { --mark-h: min(30dvh, 240px); --row-h: 64px; }
+  :root { --mark-h: min(26dvh, 200px); --row-h: 64px; }
   .ledge h1, .ledge .lead { grid-column: 1 / -1; }
   .ledge .lead { margin-top: var(--space-md); }
   .row { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xs); }
@@ -141,8 +146,17 @@ a:hover { color: var(--color-accent); }
   .log { grid-template-columns: minmax(0, 1fr); }
   .log__rows, .monitor { grid-column: 1 / -1; }
   .monitor { grid-row: 1; position: relative; margin-bottom: var(--space-lg); }
-  .ls li { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xs); }
-  .ls h3, .ls__desc, .ls__lang, .ls__facts { grid-column: 1; grid-row: auto; }
-  .ls__facts { justify-content: flex-start; }
+  .ls, .ls tbody { display: block; }
+  .ls thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .ls tr { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; column-gap: var(--space-md); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
+  .ls tbody th, .ls td { display: block; padding: 0; border: 0; width: auto; }
+  .ls tbody th { grid-column: 1 / -1; }
+  .ls__year { grid-column: 1 / -1; margin-top: var(--space-xs); }
+  .weeks { white-space: normal; }
+  .ls td.num { width: auto; text-align: left; white-space: nowrap; }
+  .ls td.num::after { content: " stars"; color: var(--color-muted); }
   .contact .container { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }
+}
+
+@media (max-width: 40rem) {
 }
