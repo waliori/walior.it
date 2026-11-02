@@ -3,19 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>waliori</title>
-<meta name="description" content="waliori: the channel, the accounts and the projects, listed as paths.">
+<title>waliori: everything I make, by path</title>
+<meta name="description" content="waliori builds a computing environment from scratch and films each module. The channel, the accounts, the source and the projects, listed as paths.">
 <link rel="canonical" href="https://walior.it/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="waliori">
 <meta property="og:description" content="The channel, the accounts and the projects, listed as paths.">
 <meta property="og:url" content="https://walior.it/">
 <meta property="og:image" content="https://walior.it/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,400..700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/martian-mono.css">
 <link rel="stylesheet" href="style.css">
 <script>document.documentElement.classList.add('js');</script>
 <script type="application/ld+json">
@@ -57,7 +58,7 @@
       <p class="lead">Newest at the top. The monitor shows the row under the pointer.</p>
       <div class="log">
         <ol class="log__rows" aria-label="The videos">
-        <li><a href="https://www.youtube.com/watch?v=QKLBYemtNXA" target="_blank" rel="noopener" data-frame="images/v-QKLBYemtNXA-c.webp" data-rest="images/v-QKLBYemtNXA.webp" data-label="/WORKSPACE  2025"><span class="log__hash">QKLBYemtNXA</span><span class="log__path">/WORKSPACE</span><span class="log__title">Dark academia home office makeover</span><span class="log__year num">2025</span></a></li>
+        <li><a href="https://www.youtube.com/watch?v=QKLBYemtNXA" target="_blank" rel="noopener" data-frame="images/v-QKLBYemtNXA-c.webp" data-rest="images/v-QKLBYemtNXA-800.webp" data-label="/WORKSPACE  2025"><span class="log__hash">QKLBYemtNXA</span><span class="log__path">/WORKSPACE</span><span class="log__title">Dark academia home office makeover</span><span class="log__year num">2025</span></a></li>
         <li><a href="https://www.youtube.com/watch?v=PKzvHBzcGJ4" target="_blank" rel="noopener" data-frame="images/v-PKzvHBzcGJ4-c.webp" data-rest="images/v-PKzvHBzcGJ4.webp" data-label="/MAIN  2024"><span class="log__hash">PKzvHBzcGJ4</span><span class="log__path">/MAIN</span><span class="log__title">Smart standing desk: the one-year IKEA hack build</span><span class="log__year num">2024</span></a></li>
         <li><a href="https://www.youtube.com/watch?v=nELf7EdYciM" target="_blank" rel="noopener" data-frame="images/v-nELf7EdYciM-c.webp" data-rest="images/v-nELf7EdYciM.webp" data-label="/LAB/PRINT  2023"><span class="log__hash">nELf7EdYciM</span><span class="log__path">/LAB/PRINT</span><span class="log__title">Ender 3 upgrade: glass bed, CR Touch and OctoPrint</span><span class="log__year num">2023</span></a></li>
         <li><a href="https://www.youtube.com/watch?v=1AdKQji42eQ" target="_blank" rel="noopener" data-frame="images/v-1AdKQji42eQ-c.webp" data-rest="images/v-1AdKQji42eQ.webp" data-label="/LINK  2023"><span class="log__hash">1AdKQji42eQ</span><span class="log__path">/LINK</span><span class="log__title">Coiled aviator cables from spare USB cables</span><span class="log__year num">2023</span></a></li>
@@ -67,7 +68,7 @@
         <li><a href="https://www.youtube.com/watch?v=bsZcSO0RGVQ" target="_blank" rel="noopener" data-frame="images/v-bsZcSO0RGVQ-c.webp" data-rest="images/v-bsZcSO0RGVQ.webp" data-label="/SHELL/INIT  2022"><span class="log__hash">bsZcSO0RGVQ</span><span class="log__path">/SHELL/INIT</span><span class="log__title">Starship, Pywal and PSReadLine</span><span class="log__year num">2022</span></a></li>
         </ol>
         <figure class="monitor" data-slot="video" data-kind="product" data-alt="The thumbnail of the video under the pointer">
-          <img src="images/v-QKLBYemtNXA.webp" width="1600" height="900" alt="" loading="lazy">
+          <img src="images/v-QKLBYemtNXA-800.webp" width="1600" height="900" alt="The newest video on the monitor: the dark academia home office makeover" loading="lazy">
           <figcaption class="monitor__osd" data-keep>/WORKSPACE  2025</figcaption>
         </figure>
       </div>
@@ -143,21 +144,21 @@
           <h3><a href="https://sail.walior.it/" target="_blank" rel="noopener">sail.walior.it</a></h3>
           <p>Plans Black Desert ship upgrades against one shared inventory: what each build has reserved, what a part costs to make, what is left to fetch. With the quests, the barter routes and the map.</p>
         </div>
-        <a class="shot" href="https://sail.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="sail" data-kind="product" data-frames="images/sail-1-c.webp,images/sail-2-c.webp,images/sail-3-c.webp,images/sail-4-c.webp,images/sail-5-c.webp" data-alt="Sailor's Log, the map of where to sail"><img src="images/sail-1.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+        <a class="shot" href="https://sail.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="sail" data-kind="product" data-frames="images/sail-1-c.webp,images/sail-2-c.webp,images/sail-3-c.webp,images/sail-4-c.webp,images/sail-5-c.webp" data-alt="Sailor's Log, the map of where to sail"><img src="images/sail-1-800.webp" width="1600" height="1000" alt="" loading="lazy"></a>
       </article>
       <article class="split split--flip">
         <div class="split__text">
           <h3><a href="https://toucan.walior.it/" target="_blank" rel="noopener">toucan.walior.it</a></h3>
           <p>A split keyboard whose letters were rearranged by annealing on 1.68 million characters of my own writing, the firmware that runs it on the Toucan2, and a trainer that teaches the layout one lesson at a time.</p>
         </div>
-        <a class="shot" href="https://toucan.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="toucan" data-kind="product" data-frames="images/toucan-1-c.webp,images/toucan-2-c.webp,images/toucan-3-c.webp,images/toucan-5-c.webp" data-alt="The Walid layout on the Toucan2 board"><img src="images/toucan-1.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+        <a class="shot" href="https://toucan.walior.it/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="toucan" data-kind="product" data-frames="images/toucan-1-c.webp,images/toucan-2-c.webp,images/toucan-3-c.webp,images/toucan-5-c.webp" data-alt="The Walid layout on the Toucan2 board"><img src="images/toucan-1-800.webp" width="1600" height="1000" alt="" loading="lazy"></a>
       </article>
       <article class="split">
         <div class="split__text">
           <h3><a href="https://ayat.network/" target="_blank" rel="noopener">ayat.network</a></h3>
           <p>A tool I keep: the Qurʾān word by word, drawn as a graph of where the text reuses the same word, form and root, with the morphology of every word and six classical dictionaries beside it.</p>
         </div>
-        <a class="shot" href="https://ayat.network/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="ayat" data-kind="product" data-frames="images/ayat-1-c.webp,images/ayat-2-c.webp,images/ayat-4-c.webp" data-alt="ayat.network, the word network of a verse"><img src="images/ayat-1.webp" width="1600" height="1000" alt="" loading="lazy"></a>
+        <a class="shot" href="https://ayat.network/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true" data-slot="ayat" data-kind="product" data-frames="images/ayat-1-c.webp,images/ayat-2-c.webp,images/ayat-4-c.webp" data-alt="ayat.network, the word network of a verse"><img src="images/ayat-1-800.webp" width="1600" height="1000" alt="" loading="lazy"></a>
       </article>
     </div>
   </section>

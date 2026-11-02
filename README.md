@@ -4,7 +4,7 @@ The waliori hub: one page that points at the channel, the accounts, the videos, 
 
 ## What is where
 
-- `site/` is everything the Worker serves: `index.html`, `style.css`, `tokens.css` and `base.css`, the frames in `images/`, the share card `og.png`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `llms.txt`, and the `_headers` and `_redirects` files that Cloudflare reads.
+- `site/` is everything the Worker serves: `index.html`, `style.css`, `tokens.css` and `base.css`, the frames in `images/` (each resting frame also at 800px, which is what the page loads), the face in `fonts/` (Martian Mono, self-hosted), the share card `og.png`, `favicon.svg`, `robots.txt`, `sitemap.xml`, `llms.txt`, and the `_headers` and `_redirects` files that Cloudflare reads.
 - `videos.json` lists the videos (path, title, upload date, YouTube id), newest first. `repos.json` holds what the GitHub API returned for the eight repositories (stars, last push, languages, a year of weekly commit counts). `links.json` holds the account and project addresses.
 - `design.md` is the locked design system: the tokens, the type, the mark, the objects on the page, and the one exception to the monochrome (colour on hover).
 - `material/` is the source material: the old avatar, the raw captures in `screens/`, the thumbnails in `thumbs/`, the vector mark, the share card source, and `profile/` (the avatar and the two banners, rendered from `avatar.html` and `banner.html`).
