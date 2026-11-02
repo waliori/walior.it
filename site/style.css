@@ -80,16 +80,17 @@ a:hover { color: var(--color-accent); }
 .ls th { text-align: left; font-weight: 400; }
 .ls thead th { padding: 0 var(--space-lg) var(--space-sm) 0; font-size: var(--text-sm); color: var(--color-muted); border-bottom: var(--rule-hair) solid var(--color-rule-2); white-space: nowrap; }
 .ls tbody th, .ls td { padding: var(--space-lg) var(--space-lg) var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
-.ls tbody th { width: 38%; }
+.ls tbody th { width: 33%; }
+.ls tbody tr { height: 128px; }
 .ls tbody th a { display: block; font-size: var(--text-title); font-weight: var(--display-weight); font-stretch: var(--stretch-display); color: var(--color-ink); }
 .ls tbody th a:hover { color: var(--color-ink-2); }
 .ls__desc { display: block; margin-top: var(--space-2xs); color: var(--color-ink-2); }
-.ls__year { width: 40%; }
+.ls__year { width: 47%; }
 .weeks { display: block; font-weight: 500; white-space: nowrap; }
 .weeks i { font-style: normal; }
 .weeks .w0 { color: var(--color-rule); } .weeks .w1 { color: var(--color-muted); } .weeks .w2 { color: var(--color-ink-2); } .weeks .w3 { color: var(--color-ink); }
 .ls__sum { display: block; margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-muted); }
-.ls td.num { width: 8%; text-align: right; color: var(--color-ink); }
+.ls td.num { width: 7%; text-align: right; color: var(--color-ink); }
 .ls th.num { text-align: right; }
 .ls__lang { width: 14%; padding-right: 0; color: var(--color-muted); }
 
