@@ -1,6 +1,7 @@
 /* Hallmark · shape: Index-First · genre: atmospheric · theme: Terminal (deal 1/3, seed waliori-hub-directory-listing-9aa1·2f378af2·2026-11-01·r0) · job: listen · draw: 870a77
- * hero: Ledge · nav: masthead · footer: mast · imagery: screenshots 3 (capture.mjs), baked as CRT frames · signature: the mark, four slashes typed in a row, printed from the page's own paths and resolving row by row
+ * hero: Ledge · nav: masthead · footer: mast · imagery: screenshots 12 and 8 thumbnails (capture.mjs, i.ytimg.com), baked as CRT frames · signature: the mark, four slashes typed in a row, printed from the page's own paths and resolving row by row
  * axes: dark/mono/neutral (white phosphor, the Terminal theme without its green) · posture: committed · contrast: pass · fold: pass · v2.0.0
+ * finish-review 2 (the videos log and the repositories): subagent · 7 findings · 7 resolved (the phone monitor relative, the facts on one line with their words, the monitor at 4:3 on seven columns, the bar with its own label and no legend, the repos as rows of a tool's output with the name as a path, the OSD on its own strip, the full eleven-character id)
  * finish-review: subagent · 6 findings · 6 resolved · gap: none (sail recaptured on its map view; the contact band 96px under the tool row; the projects head without a count; the year on the ninth column; footer links padded to 24px; the mark 16px shorter at 1280 x 800 so the second row shows)
  * hero-review: fix · 4 findings · 4 resolved (the mark redrawn at 120 columns, row pitch 1.85, 80% of the container wide and left-aligned on the head's axis; the index rows on 3 and 9 columns) */
 /* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, a terminal theme on a terminal channel is the expected pairing; what no other page has is the mark set from its own eight path names and the listing of real paths, so the page leads with those and nothing else */
@@ -52,17 +53,39 @@ a:hover { color: var(--color-accent); }
 .row--primary:active { background: var(--glyph-5); }
 .row--primary:focus-visible { outline-color: var(--color-ink); }
 
-/* videos: a table */
+/* videos: the log. Rows on the left, one row per video with its id as a hash; the monitor on the right shows the thumbnail of the row under the pointer, cutting between tapes */
 .videos { padding-block: var(--section-gap) 0; }
 .videos h2 { margin-bottom: var(--space-2xl); }
-.videos table { width: 100%; border-collapse: collapse; }
-.videos th { padding: 0 0 var(--space-sm); text-align: left; font-weight: 400; font-size: var(--text-sm); color: var(--color-muted); border-bottom: var(--rule-hair) solid var(--color-rule-2); }
-.videos td { padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
-.videos .path { width: 25%; font-weight: var(--display-weight); font-stretch: var(--stretch-display); font-size: var(--text-title); white-space: nowrap; }
-.videos .title a { color: var(--color-ink); }
-.videos .title a:hover { color: var(--color-accent); }
-.videos .title { width: 50%; }
-.videos .num { width: 25%; text-align: left; color: var(--color-muted); }
+.log { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--gap-columns); align-items: start; }
+.log__rows { grid-column: 1 / 6; margin: 0; padding: 0; list-style: none; border-top: var(--rule-hair) solid var(--color-rule); }
+.log__rows a { display: grid; grid-template-columns: 11ch minmax(0, 1fr) 4ch; grid-template-rows: auto auto; column-gap: var(--space-md); align-items: baseline; padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); color: var(--color-ink); text-decoration: none; transition: background-color var(--dur-micro) steps(1); }
+.log__rows a:hover, .log__rows a:focus-visible { background: var(--color-paper-3); color: var(--color-ink); }
+.log__rows a:active { background: var(--color-accent-wash); }
+.log__rows a:focus-visible { outline-offset: -2px; }
+.log__hash { grid-row: 1 / 3; align-self: start; font-size: var(--text-sm); color: var(--color-muted); }
+.log__path { font-size: var(--text-title); font-weight: var(--display-weight); font-stretch: var(--stretch-display); }
+.log__title { grid-column: 2; font-size: var(--text-sm); color: var(--color-ink-2); }
+.log__year { grid-column: 3; grid-row: 1; justify-self: end; color: var(--color-muted); }
+.monitor { grid-column: 6 / -1; position: sticky; top: var(--space-2xl); margin: 0; aspect-ratio: 4 / 3; border: var(--rule-hair) solid var(--color-rule); }
+.monitor__osd { position: absolute; left: var(--space-md); top: var(--space-md); z-index: 3; padding: var(--space-2xs) var(--space-xs); background: var(--color-paper); font-size: var(--text-sm); color: var(--color-ink); white-space: pre; }
+.monitor > img.next { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; z-index: 2; }
+.monitor.is-cut > img.next { animation: cut 220ms steps(3) forwards; }
+@media (prefers-reduced-motion: reduce) { .monitor.is-cut > img.next { animation: none; opacity: 1; } }
+
+/* repositories: rows read like a tool's output. The name as a path, the description under it, the language mix as twenty marks with its own label, the stars and the last push on the right */
+.repos { padding-block: var(--section-gap-l) 0; }
+.repos h2 { margin-bottom: var(--space-2xl); }
+.ls { margin: 0; padding: 0; list-style: none; border-top: var(--rule-hair) solid var(--color-rule); }
+.ls li { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 3fr); column-gap: var(--gap-columns); align-items: baseline; padding-block: var(--space-lg); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.ls h3 { grid-column: 1; font-size: var(--text-title); }
+.ls h3 a { color: var(--color-ink); }
+.ls h3 a:hover { color: var(--color-ink-2); }
+.ls__desc { grid-column: 2; grid-row: 1; color: var(--color-ink-2); }
+.ls__lang { grid-column: 2; grid-row: 2; margin-top: var(--space-xs); display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); align-items: baseline; }
+.bar { font-weight: 500; white-space: pre; color: var(--color-ink); }
+.bar .l1 { color: var(--color-ink-2); } .bar .l2 { color: var(--color-muted); } .bar .l3 { color: var(--color-rule-2); }
+.ls__legend { color: var(--color-muted); white-space: nowrap; }
+.ls__facts { grid-column: 3; grid-row: 1; display: flex; justify-content: flex-end; gap: var(--space-lg); color: var(--color-muted); white-space: nowrap; }
 
 /* projects: three splits. Each capture is baked into a phosphor CRT frame by tools/crt.py (scanlines, bloom, curvature, torn bands); the page only adds a faint flicker and a jitter every four seconds while the frame is in view */
 [data-kind="product"]:has(> img) { background: var(--color-paper); }
@@ -112,15 +135,14 @@ a:hover { color: var(--color-accent); }
   .ledge h1, .ledge .lead { grid-column: 1 / -1; }
   .ledge .lead { margin-top: var(--space-md); }
   .row { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xs); }
-  .videos thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-  .videos tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: var(--space-md); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
-  .videos td { padding: 0; border: 0; }
-  .videos .path, .videos .num, .videos .title { width: auto; }
-  .videos .title { grid-column: 1 / -1; }
   .split { grid-template-columns: minmax(0, 1fr); }
   .split .split__text, .split .shot, .split--flip .split__text, .split--flip .shot { grid-column: 1 / -1; grid-row: auto; }
   .split .shot { width: 100%; margin-top: var(--space-lg); min-height: 0; }
-  .videos .num { grid-column: 2; grid-row: 1; }
-  .videos .title { grid-row: 2; }
+  .log { grid-template-columns: minmax(0, 1fr); }
+  .log__rows, .monitor { grid-column: 1 / -1; }
+  .monitor { grid-row: 1; position: relative; margin-bottom: var(--space-lg); }
+  .ls li { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-2xs); }
+  .ls h3, .ls__desc, .ls__lang, .ls__facts { grid-column: 1; grid-row: auto; }
+  .ls__facts { justify-content: flex-start; }
   .contact .container { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }
 }

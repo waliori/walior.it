@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Turns a capture into a phosphor CRT frame: grey, (inverted when the interface is light), noise, green
 phosphor, bloom, scanlines, a few torn bands, barrel curvature and a vignette. Needs ImageMagick 7.
-  python3 tools/crt.py material/screens/sail-map-dark.png site/images/sail.webp [--invert] [--seed 7]"""
+  python3 tools/crt.py material/screens/sail-map-dark.png site/images/sail.webp [--invert] [--seed 7] [--size 1600x900]"""
 import random, subprocess, sys, tempfile, os
 src, dst = sys.argv[1], sys.argv[2]
 invert = "--invert" in sys.argv
 seed = int(sys.argv[sys.argv.index("--seed") + 1]) if "--seed" in sys.argv else 1
 random.seed(seed)
-W, H = 1600, 1000
+W, H = (int(x) for x in (sys.argv[sys.argv.index("--size") + 1] if "--size" in sys.argv else "1600x1000").split("x"))
 PAPER, PHOSPHOR, HOT = "#0a0b0a", "#c5c7c4", "#f0f2ef"   # paper, a white phosphor, and a hotter highlight for bloom
 tmp = tempfile.mkdtemp()
 grey = os.path.join(tmp, "grey.png"); scan = os.path.join(tmp, "scan.png")

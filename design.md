@@ -32,6 +32,10 @@ One family, Martian Mono, weights 400 and 500 only. Heads at width 112.5%, text 
 ## Surfaces and pictures
 One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. The mark is printed in type (`tools/glyphs.py`). Product captures are real screenshots baked into phosphor CRT frames by `tools/crt.py` (grey, inverted when the interface is light, noise, white phosphor, bloom, scanlines, a few torn bands, barrel curvature, vignette), inside a 1px rule. On hover a frame cycles through more screens of its product (`tools/frames.mjs` captures them), each cut in through three torn slices; the page adds a faint flicker. No photographs.
 
+## The objects
+- The videos are a log: one row per video (its full YouTube id, the path at title size, the title, the year) on five columns, and a 4:3 monitor on seven that shows the video's thumbnail baked as a CRT frame; the row under the pointer cuts the monitor to its frame and writes the path and year on the OSD strip. Without script the monitor shows the newest.
+- The repositories are rows read like a tool's output: the name as `/github/<name>`, the description, the language mix as twenty marks (`#`, `=`, `-`, `.` in four lightness steps) with the top language as its label, the stars and the last push on the right. Facts come from the GitHub API into `repos.json`.
+
 ## Controls
 - Primary: a full-width block of the ink (`--color-accent`, near white) with the paper for text, square, 72px tall, state in `steps(1)`.
 - Secondary: a 1px `--color-ink-2` border, 48px tall, same square corners.
