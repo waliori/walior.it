@@ -18,7 +18,7 @@ The waliori hub: one page that points at the channel, the accounts, the videos, 
 
 ## How the page works
 
-The hero is the mark and the index of four accounts; `/youtube` is the one white row at rest, and whichever row is under the pointer takes the white. Under `/videos`, the rows are the videos and the monitor beside them shows the thumbnail of the row under the pointer, in colour while the pointer is on the block and in grey when it leaves. Under `/github`, each repository row draws its last 52 weeks of commits as 52 cells. Under `/projects`, each site has a CRT frame that plays more of its screens on hover. Nothing on the page needs a script to read; the scripts only add the hover behaviour.
+The hero is the mark and the index of four accounts; `/youtube` is the one white row at rest, and whichever row is under the pointer takes the white. Under `/videos`, the rows are the videos and the monitor beside them shows the thumbnail of the row under the pointer, in colour while the pointer is on the block and in grey when it leaves. Under `/github`, each repository row draws its last 52 weeks of commits as 52 cells. Under `/projects`, each site has a CRT frame that plays more of its screens on hover. On a touch screen there is no hover, so the row at the monitor's edge drives it as the page scrolls, a tap lights a row, a tap on the lit row opens it, and a project screen plays while it is in view. Nothing on the page needs a script to read; the scripts only add these behaviours.
 
 ## Content changes
 

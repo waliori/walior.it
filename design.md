@@ -7,7 +7,7 @@ The locked system. Every Hallmark run reads this first and pages share it. Chang
 - Shape of the first page: Index-First (a directory listing), hero posture Ledge
 - Theme: Terminal, without its green: a white-phosphor terminal. One neutral ramp from the paper to the ink, no second hue anywhere
 - Axes: dark/mono/neutral · posture: committed
-- The one exception to the single ramp: on hover, and only on hover, a CRT frame shows the product's own colours (full for a video thumbnail, muted for a site capture), baked as a second frame by `tools/crt.py --colour`. At rest everything is the white phosphor.
+- The one exception to the single ramp: on hover, or on a touch screen for the lit row and the screen in view, and only then, a CRT frame shows the product's own colours (full for a video thumbnail, muted for a site capture), baked as a second frame by `tools/crt.py --colour`. At rest everything is the white phosphor.
 
 ## The mark
 Four slashes typed in a row, `\/\/`, read as a w. Vector in `material/mark.svg` (currentColor strokes, 64 viewBox, round caps). On the page it is printed as a grid of characters taken from the page's own path names, in the eight glyph tokens, resolving row by row. The favicon (`site/favicon.svg`) is the same four strokes in the ink on the paper. The old W avatar is reference only.
@@ -34,7 +34,8 @@ One family, Martian Mono, weights 400 and 500 only. Heads at width 112.5%, text 
 One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--color-rule-2`; no radius, no shadow, no glow. The mark is printed in type (`tools/glyphs.py`). Product captures are real screenshots baked into phosphor CRT frames by `tools/crt.py` (grey, inverted when the interface is light, noise, white phosphor, bloom, scanlines, a few torn bands, barrel curvature, vignette), inside a 1px rule. On hover a frame cycles through more screens of its product (`tools/frames.mjs` captures them), each cut in through three torn slices; the page adds a faint flicker. No photographs.
 
 ## The objects
-- The videos are a log: one row per video (its full YouTube id, the path at title size, the title, the year) on five columns, and a 4:3 monitor on seven that shows the video's thumbnail baked as a CRT frame; the row under the pointer cuts the monitor to its frame and writes the path and year on the OSD strip. Without script the monitor shows the newest.
+- The videos are a log: one row per video (its full YouTube id, the path at title size, the title, the year) on five columns, and a 4:3 monitor on seven that shows the video's thumbnail baked as a CRT frame; the row under the pointer cuts the monitor to its frame and writes the path and year on the OSD strip. On touch the monitor sticks to the top on phones, the row at its lower edge is lit and drives it as the page scrolls, a tap lights a row, a tap on the lit row or the monitor opens it. Without script the monitor shows the newest and a tap opens the row.
+- The project screens cycle through their frames on hover; on touch, while at least 60 percent of the screen is in view, unless motion is reduced.
 - The repositories, under the head `/github`, are a table ordered by stars: the name as `/github/<name>` with its line beneath, the last 52 weeks of commits as 52 glyph cells (`.` quiet, `-` one, `=` two to four, `#` five or more, in four lightness steps, the quiet week dimmest) with the total beneath, the stars and the top language. Facts come from the GitHub API into `repos.json`.
 - Section heads are paths in the page's idiom (`/videos`, `/github`, `/projects`), each with one lead line; never a count.
 

@@ -140,6 +140,14 @@ a:hover { color: var(--color-accent); }
 .foot__links a { display: inline-block; min-inline-size: 24px; padding: var(--space-xs) var(--space-xs); text-align: center; }
 .foot__line { margin-top: var(--space-2xl); font-size: var(--text-sm); color: var(--color-muted); }
 
+/* touch: no hover to lean on, so the lead says what to do instead, the row at the monitor's edge is lit and the monitor says it opens */
+.if-touch { display: none; }
+.touch .if-touch { display: inline; }
+.touch .if-hover { display: none; }
+.log__rows a.is-on, .log__rows a.is-on:hover { background: var(--color-accent-wash); }
+.touch .monitor { cursor: pointer; }
+.monitor.is-live::after { content: "Tap to open"; position: absolute; right: var(--space-md); top: var(--space-md); z-index: 3; padding: var(--space-2xs) var(--space-xs); background: var(--color-paper); color: var(--color-ink-2); }
+
 @media (max-width: 60rem) {
   :root { --mark-h: min(26dvh, 200px); --row-h: 64px; }
   .ledge h1, .ledge .lead { grid-column: 1 / -1; }
@@ -148,20 +156,26 @@ a:hover { color: var(--color-accent); }
   .split { grid-template-columns: minmax(0, 1fr); }
   .split .split__text, .split .shot, .split--flip .split__text, .split--flip .shot { grid-column: 1 / -1; grid-row: auto; }
   .split .shot { width: 100%; margin-top: var(--space-lg); min-height: 0; }
-  .log { grid-template-columns: minmax(0, 1fr); }
-  .log__rows, .monitor { grid-column: 1 / -1; }
-  .monitor { grid-row: 1; position: relative; margin-bottom: var(--space-lg); }
+  .log { display: flex; flex-direction: column; }
+  .monitor { order: -1; flex: none; width: 100%; top: 0; z-index: 4; aspect-ratio: 16 / 9; max-height: 50dvh; margin-bottom: var(--space-lg); background: var(--color-paper); }
   .ls, .ls tbody { display: block; }
   .ls thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .ls tbody tr { height: auto; }
   .ls tr { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; column-gap: var(--space-md); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
   .ls tbody th, .ls td { display: block; padding: 0; border: 0; width: auto; }
   .ls tbody th { grid-column: 1 / -1; }
   .ls__year { grid-column: 1 / -1; margin-top: var(--space-xs); }
-  .weeks { white-space: normal; }
+  .weeks { display: grid; grid-template-columns: repeat(26, minmax(0, 1fr)); white-space: normal; }
+  .weeks wbr { display: none; }
+  .ls tbody th a { overflow-wrap: anywhere; }
   .ls td.num { width: auto; text-align: left; white-space: nowrap; }
   .ls td.num::after { content: " stars"; color: var(--color-muted); }
   .contact .container { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }
 }
 
 @media (max-width: 40rem) {
+  .log__rows a { grid-template-columns: minmax(0, 1fr) 4ch; }
+  .log__path, .log__title { grid-column: 1; }
+  .log__year { grid-column: 2; }
+  .log__hash { grid-column: 1; grid-row: 3; margin-top: var(--space-2xs); }
 }

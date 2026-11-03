@@ -18,7 +18,7 @@
 <link rel="preload" href="fonts/martian-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/martian-mono.css">
 <link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>document.documentElement.classList.add('js'); if (matchMedia('(hover: none), (pointer: coarse)').matches) document.documentElement.classList.add('touch');</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
  {"@type":"Person","@id":"https://walior.it/#waliori","name":"waliori","url":"https://walior.it/","image":"https://walior.it/og.png",
@@ -55,7 +55,7 @@
   <section class="videos">
     <div class="container">
       <h2>/videos</h2>
-      <p class="lead">Newest at the top. The monitor shows the row under the pointer.</p>
+      <p class="lead">Newest at the top. <span class="if-hover">The monitor shows the row under the pointer.</span><span class="if-touch">The monitor follows your scroll. Tap the lit row to watch.</span></p>
       <div class="log">
         <ol class="log__rows" aria-label="The videos">
         <li><a href="https://www.youtube.com/watch?v=QKLBYemtNXA" target="_blank" rel="noopener" data-frame="images/v-QKLBYemtNXA-c.webp" data-rest="images/v-QKLBYemtNXA-800.webp" data-label="/WORKSPACE  2025"><span class="log__hash">QKLBYemtNXA</span><span class="log__path">/WORKSPACE</span><span class="log__title">Dark academia home office makeover</span><span class="log__year num">2025</span></a></li>
@@ -138,7 +138,7 @@
   <section class="projects">
     <div class="container">
       <h2>/projects</h2>
-      <p class="lead">Each on its own address. Hover a screen for more of it.</p>
+      <p class="lead">Each on its own address. <span class="if-hover">Hover a screen for more of it.</span><span class="if-touch">A screen in view runs through more of it.</span></p>
       <article class="split">
         <div class="split__text">
           <h3><a href="https://sail.walior.it/" target="_blank" rel="noopener">sail.walior.it</a></h3>
@@ -192,17 +192,29 @@
   }, { passive: true }));
   const io = new IntersectionObserver((es) => es.forEach((e) => e.target.classList.toggle('is-seen', e.isIntersecting)));
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const cut = (el, img, next, src) => { if (img.src.endsWith(src)) return; next.src = src; el.classList.remove('is-cut'); void next.offsetWidth; el.classList.add('is-cut'); setTimeout(() => { img.src = src; el.classList.remove('is-cut'); }, still ? 0 : 220); };
+  const touch = document.documentElement.classList.contains('touch');
+  const cut = (el, img, next, src) => { if ((el.cutTo || img.src).endsWith(src)) return; el.cutTo = src; clearTimeout(el.cutTimer); next.src = src; el.classList.remove('is-cut'); void next.offsetWidth; el.classList.add('is-cut'); el.cutTimer = setTimeout(() => { img.src = src; el.classList.remove('is-cut'); }, still ? 0 : 220); };
   const mon = document.querySelector('.monitor');
   if (mon) {
     const img = mon.querySelector('img'); const osd = mon.querySelector('.monitor__osd');
     const next = document.createElement('img'); next.className = 'next'; next.alt = ''; next.src = img.src; next.width = img.width; next.height = img.height; mon.appendChild(next);
-    let shown = null;
-    document.querySelectorAll('.log__rows a[data-frame]').forEach((a) => { const go = () => { shown = a; cut(mon, img, next, a.dataset.frame); osd.textContent = a.dataset.label; }; a.addEventListener('pointerenter', go); a.addEventListener('focus', go); });
-    const back = () => { if (shown) cut(mon, img, next, shown.dataset.rest); };
-    const log = document.querySelector('.log');
-    mon.addEventListener('pointerenter', () => { if (shown) cut(mon, img, next, shown.dataset.frame); else { shown = document.querySelector('.log__rows a[data-frame]'); cut(mon, img, next, shown.dataset.frame); } });
-    log.addEventListener('pointerleave', back); log.addEventListener('focusout', (e) => { if (!e.currentTarget.contains(e.relatedTarget)) back(); });
+    if (touch) {
+      // no pointer to hover with: the row at the monitor's lower edge drives the monitor as the page scrolls; a tap lights a row, and a tap on the lit row or the monitor opens it
+      const rows = [...document.querySelectorAll('.log__rows a[data-frame]')]; const list = document.querySelector('.log__rows'); let on = null, queued = false;
+      const set = (a) => { if (a === on) return; if (on) on.classList.remove('is-on'); on = a; a.classList.add('is-on'); mon.classList.add('is-live'); cut(mon, img, next, a.dataset.frame); osd.textContent = a.dataset.label; };
+      const pick = () => { queued = false; const m = mon.getBoundingClientRect(); const line = Math.abs(m.left - list.getBoundingClientRect().left) < 2 ? m.bottom + 48 : innerHeight * 0.4; let a = rows[0]; for (const r of rows) if (r.getBoundingClientRect().top <= line) a = r; set(a); };
+      const onScroll = () => { if (!queued) { queued = true; requestAnimationFrame(pick); } };
+      new IntersectionObserver(([e]) => { if (e.isIntersecting) { addEventListener('scroll', onScroll, { passive: true }); pick(); } else { removeEventListener('scroll', onScroll); if (on) { cut(mon, img, next, on.dataset.rest); on.classList.remove('is-on'); on = null; mon.classList.remove('is-live'); } } }, { threshold: 0.3 }).observe(mon);
+      rows.forEach((a) => a.addEventListener('click', (e) => { if (a !== on) { e.preventDefault(); set(a); } }));
+      mon.addEventListener('click', () => { if (on) on.click(); });
+    } else {
+      let shown = null;
+      document.querySelectorAll('.log__rows a[data-frame]').forEach((a) => { const go = () => { shown = a; cut(mon, img, next, a.dataset.frame); osd.textContent = a.dataset.label; }; a.addEventListener('pointerenter', go); a.addEventListener('focus', go); });
+      const back = () => { if (shown) cut(mon, img, next, shown.dataset.rest); };
+      const log = document.querySelector('.log');
+      mon.addEventListener('pointerenter', () => { if (shown) cut(mon, img, next, shown.dataset.frame); else { shown = document.querySelector('.log__rows a[data-frame]'); cut(mon, img, next, shown.dataset.frame); } });
+      log.addEventListener('pointerleave', back); log.addEventListener('focusout', (e) => { if (!e.currentTarget.contains(e.relatedTarget)) back(); });
+    }
     document.querySelectorAll('.log__rows a[data-frame]').forEach((a) => { const i = new Image(); i.src = a.dataset.frame; });
   }
   document.querySelectorAll('.shot').forEach((el) => {
@@ -212,8 +224,9 @@
     const next = document.createElement('img'); next.className = 'next'; next.alt = ''; next.src = first.src; next.width = first.width; next.height = first.height; el.appendChild(next);
     const show = () => { at = (at + 1) % list.length; cut(el, first, next, list[at]); };
     const start = () => { if (timer) return; if (!loaded) { loaded = true; list.forEach((u) => { const i = new Image(); i.src = u; }); } timer = setInterval(show, 900); show(); };
-    const stop = () => { clearInterval(timer); timer = null; at = -1; first.src = rest; el.classList.remove('is-cut'); };
-    el.addEventListener('pointerenter', start); el.addEventListener('pointerleave', stop); el.addEventListener('pointercancel', stop);
+    const stop = () => { clearInterval(timer); clearTimeout(el.cutTimer); el.cutTo = null; timer = null; at = -1; first.src = rest; el.classList.remove('is-cut'); };
+    if (touch) { if (!still) new IntersectionObserver(([e]) => { if (e.isIntersecting) start(); else stop(); }, { threshold: 0.6 }).observe(el); }
+    else { el.addEventListener('pointerenter', start); el.addEventListener('pointerleave', stop); el.addEventListener('pointercancel', stop); }
   });
 })();
 window.hallmarkSlots = (m) => { for (const [k, v] of Object.entries(m)) { const s = document.querySelector(`[data-slot="${k}"]`); if (!s) continue; const im = new Image(); im.src = typeof v === 'string' ? v : v.src; im.alt = (typeof v === 'object' && v.alt) || s.dataset.alt || ''; s.querySelectorAll(':scope > img').forEach((o) => o.remove()); s.prepend(im); } };
