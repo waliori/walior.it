@@ -6,7 +6,7 @@
 - X: https://x.com/waliori
 - Instagram: https://www.instagram.com/waliorit/
 - GitHub: https://github.com/waliori
-- Sailor's Log, a Black Desert ship planner: https://sail.walior.it/
+- Sailor's Log, a Black Desert ship planner. Its barter runs are a routing problem with cargo that changes on the way, searched with adaptive large neighbourhood search (Ropke and Pisinger, 2006) over a stop by stop simulation: https://sail.walior.it/ and its code at https://github.com/waliori/bdo-ship-upgrade-tracker
 - Walid, a keyboard layout and its trainer: https://toucan.walior.it/
 - Daevanion planner, the best route through the AION 2 Daevanion boards, found with operations research (a budgeted maximum-weight connected subgraph, solved by an exact sweep with bounds): https://daevanion.walior.it/ and its code at https://github.com/waliori/aion2
 - Contact: contact@walior.it
