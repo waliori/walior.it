@@ -84,19 +84,14 @@ a:hover { color: var(--color-accent); }
 .ls th { text-align: left; font-weight: 400; }
 .ls thead th { padding: 0 var(--space-lg) var(--space-sm) 0; font-size: var(--text-sm); color: var(--color-muted); border-bottom: var(--rule-hair) solid var(--color-rule-2); white-space: nowrap; }
 .ls tbody th, .ls td { padding: var(--space-lg) var(--space-lg) var(--space-lg) 0; border-bottom: var(--rule-hair) solid var(--color-rule); vertical-align: baseline; }
-.ls tbody th { width: 33%; }
-.ls tbody tr { height: 128px; }
+.ls tbody th { width: 34%; }
 .ls tbody th a { display: block; font-size: var(--text-title); font-weight: var(--display-weight); font-stretch: var(--stretch-display); color: var(--color-ink); }
 .ls tbody th a:hover { color: var(--color-ink-2); }
-.ls__desc { display: block; margin-top: var(--space-2xs); color: var(--color-ink-2); }
-.ls__year { width: 47%; }
-.weeks { display: block; font-weight: 500; white-space: nowrap; }
-.weeks i { font-style: normal; }
-.weeks .w0 { color: var(--color-rule); } .weeks .w1 { color: var(--color-muted); } .weeks .w2 { color: var(--color-ink-2); } .weeks .w3 { color: var(--color-ink); }
-.ls__sum { display: block; margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-muted); }
+.ls__desc { color: var(--color-ink-2); }
 .ls td.num { width: 7%; text-align: right; color: var(--color-ink); }
 .ls th.num { text-align: right; }
-.ls__lang { width: 14%; padding-right: 0; color: var(--color-muted); }
+.ls__lang { width: 12%; color: var(--color-muted); }
+.ls td.num:last-child, .ls thead th:last-child { padding-right: 0; }
 
 /* projects: three splits. Each capture is baked into a phosphor CRT frame by tools/crt.py (scanlines, bloom, curvature, torn bands); the page only adds a faint flicker and a jitter every four seconds while the frame is in view */
 [data-kind="product"]:has(> img) { background: var(--color-paper); }
@@ -160,16 +155,13 @@ a:hover { color: var(--color-accent); }
   .monitor { order: -1; flex: none; width: 100%; top: 0; z-index: 4; aspect-ratio: 16 / 9; max-height: 50dvh; margin-bottom: var(--space-lg); background: var(--color-paper); }
   .ls, .ls tbody { display: block; }
   .ls thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-  .ls tbody tr { height: auto; }
   .ls tr { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; column-gap: var(--space-md); padding-block: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); }
   .ls tbody th, .ls td { display: block; padding: 0; border: 0; width: auto; }
   .ls tbody th { grid-column: 1 / -1; }
-  .ls__year { grid-column: 1 / -1; margin-top: var(--space-xs); }
-  .weeks { display: grid; grid-template-columns: repeat(26, minmax(0, 1fr)); white-space: normal; }
-  .weeks wbr { display: none; }
+  .ls__desc { grid-column: 1 / -1; margin-block: var(--space-2xs) var(--space-xs); }
   .ls tbody th a { overflow-wrap: anywhere; }
   .ls td.num { width: auto; text-align: left; white-space: nowrap; }
-  .ls td.num::after { content: " stars"; color: var(--color-muted); }
+  .ls td.num::after { content: " " attr(data-u); color: var(--color-muted); }
   .contact .container { grid-template-columns: minmax(0, 1fr); row-gap: var(--space-lg); }
 }
 

@@ -36,7 +36,7 @@ One hue in lightness steps; hairlines in `--color-rule`, firmer lines in `--colo
 ## The objects
 - The videos are a log: one row per video (its full YouTube id, the path at title size, the title, the year) on five columns, and a 4:3 monitor on seven that shows the video's thumbnail baked as a CRT frame; the row under the pointer cuts the monitor to its frame and writes the path and year on the OSD strip. On touch the monitor sticks to the top on phones, the row at its lower edge is lit and drives it as the page scrolls, a tap lights a row, a tap on the lit row or the monitor opens it. Without script the monitor shows the newest and a tap opens the row.
 - The project screens cycle through their frames on hover; on touch, while at least 60 percent of the screen is in view, unless motion is reduced.
-- The repositories, under the head `/github`, are a table ordered by stars: the name as `/github/<name>` with its line beneath, the last 52 weeks of commits as 52 glyph cells (`.` quiet, `-` one, `=` two to four, `#` five or more, in four lightness steps, the quiet week dimmest) with the total beneath, the stars and the top language. Facts come from the GitHub API into `repos.json`.
+- The repositories, under the head `/github`, are a table ordered by stars: the name as `/github/<name>`, one or two sentences on what it is, the top language, the stars and the forks. Facts come from the GitHub API into `repos.json`; the page reads the stars and forks again as it loads and keeps its own when GitHub does not answer.
 - Section heads are paths in the page's idiom (`/videos`, `/github`, `/projects`), each with one lead line; never a count.
 
 ## Controls

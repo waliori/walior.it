@@ -1,732 +1,255 @@
 [
- {
-  "name": "RP-pico-sit-stand-firmware",
-  "url": "https://github.com/waliori/RP-pico-sit-stand-firmware",
-  "stars": 17,
-  "pushed": "2026-11-02",
-  "fork": false,
-  "parent": null,
-  "license": null,
-  "description": "  🪑 Smart Sit-Stand Desk Controller built with Raspberry Pi Pico W and MicroPython. Features WiFi connectivity, web API, OLED display, dual encoder system, and   advanced safety monitoring. Complete open-source hardware and software solution for motorized desk automation.",
-  "languages": [
-   [
-    "Python",
-    100.0
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "wine-sni-bridge",
-  "url": "https://github.com/waliori/wine-sni-bridge",
-  "stars": 7,
-  "pushed": "2026-05-24",
-  "fork": false,
-  "parent": null,
-  "license": "MIT",
-  "description": "Lightweight X11-to-SNI bridge for Wine tray icons on Wayland. Replaces xembedsniproxy without focus-stealing.",
-  "languages": [
-   [
-    "Python",
-    92.3
-   ],
-   [
-    "Nix",
-    7.7
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   4,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "noirwm",
-  "url": "https://github.com/waliori/noirwm",
-  "stars": 1,
-  "pushed": "2026-10-06",
-  "fork": true,
-  "parent": "mangowm/mango",
-  "license": "NOASSERTION",
-  "description": "wayland compositor forked from mangowm",
-  "languages": [
-   [
-    "C",
-    94.1
-   ],
-   [
-    "GLSL",
-    2.3
-   ],
-   [
-    "Nix",
-    2.2
-   ],
-   [
-    "Meson",
-    1.3
-   ],
-   [
-    "Makefile",
-    0.1
-   ],
-   [
-    "Shell",
-    0.0
-   ]
-  ],
-  "weeks": [
-   24,
-   21,
-   14,
-   4,
-   17,
-   5,
-   6,
-   17,
-   10,
-   20,
-   24,
-   28,
-   14,
-   35,
-   18,
-   19,
-   12,
-   2,
-   10,
-   1,
-   31,
-   5,
-   0,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "waybar_peek",
-  "url": "https://github.com/waliori/waybar_peek",
-  "stars": 12,
-  "pushed": "2025-12-28",
-  "fork": false,
-  "parent": null,
-  "license": "MIT",
-  "description": "Toggleable Auto-hide Waybar for Hyprland - shows on cursor hover, hides when windows are open",
-  "languages": [
-   [
-    "Python",
-    100.0
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   6,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "wsl-dotfiles",
-  "url": "https://github.com/waliori/wsl-dotfiles",
-  "stars": 9,
-  "pushed": "2026-11-02",
-  "fork": false,
-  "parent": null,
-  "license": null,
-  "description": "WSL dotfiles with dynamic pywal + Starship integration. Auto-sync colors    between Windows PowerShell & WSL. Screenshot-based theming included.",
-  "languages": [
-   [
-    "PowerShell",
-    95.7
-   ],
-   [
-    "Shell",
-    4.3
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   1,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "toucan2",
-  "url": "https://github.com/waliori/toucan2",
-  "stars": 0,
-  "pushed": "2026-11-04",
-  "fork": false,
-  "parent": null,
-  "license": null,
-  "description": "Walid, a keyboard layout annealed on my own words: custom letters for the beekeeb Toucan2 split keyboard, standalone ZMK firmware with accent layers and a live key feed, and a browser typing trainer",
-  "languages": [
-   [
-    "HTML",
-    69.5
-   ],
-   [
-    "JavaScript",
-    13.9
-   ],
-   [
-    "CSS",
-    10.1
-   ],
-   [
-    "Python",
-    5.0
-   ],
-   [
-    "Nix",
-    1.1
-   ],
-   [
-    "C",
-    0.4
-   ],
-   [
-    "CMake",
-    0.0
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   20,
-   35,
-   1,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "bdo-ship-upgrade-tracker",
-  "url": "https://github.com/waliori/bdo-ship-upgrade-tracker",
-  "stars": 4,
-  "pushed": "2026-11-25",
-  "fork": false,
-  "parent": null,
-  "license": "NOASSERTION",
-  "description": "Plan Black Desert Online ship upgrades against one shared inventory — what every build has reserved, what a part really costs to make, and what you still have to go and get.",
-  "languages": [
-   [
-    "JavaScript",
-    91.6
-   ],
-   [
-    "CSS",
-    7.7
-   ],
-   [
-    "Python",
-    0.3
-   ],
-   [
-    "HTML",
-    0.2
-   ],
-   [
-    "Shell",
-    0.2
-   ],
-   [
-    "Dockerfile",
-    0.1
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   104,
-   109,
-   138,
-   86,
-   154,
-   162,
-   45,
-   0,
-   40,
-   8,
-   5,
-   0,
-   28,
-   35
-  ]
- },
- {
-  "name": "qurangraph",
-  "url": "https://github.com/waliori/qurangraph",
-  "stars": 1,
-  "pushed": "2026-11-04",
-  "fork": false,
-  "parent": null,
-  "license": null,
-  "description": "Interactive force-directed graph of the Qurʾān — explore where the text reuses the same word, lemma (صيغة) and root (جذر). A pure Qurʾān↔Qurʾān lexical research tool. Installable PWA, bilingual Arabic/English.",
-  "languages": [
-   [
-    "JavaScript",
-    93.4
-   ],
-   [
-    "CSS",
-    6.0
-   ],
-   [
-    "HTML",
-    0.4
-   ],
-   [
-    "Dockerfile",
-    0.1
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   3,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   22,
-   35,
-   14,
-   22,
-   6,
-   6,
-   0,
-   21,
-   1,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0
-  ]
- },
- {
-  "name": "aion2",
-  "url": "https://github.com/waliori/aion2",
-  "stars": 0,
-  "pushed": "2026-11-26",
-  "fork": false,
-  "parent": null,
-  "license": null,
-  "description": "Small tools for AION 2: Ariel Daevanion board route planner",
-  "languages": [
-   [
-    "JavaScript",
-    61.3
-   ],
-   [
-    "HTML",
-    26.7
-   ],
-   [
-    "CSS",
-    11.1
-   ],
-   [
-    "Python",
-    0.7
-   ],
-   [
-    "Shell",
-    0.3
-   ]
-  ],
-  "weeks": [
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   0,
-   24
-  ]
- }
+  {
+    "name": "RP-pico-sit-stand-firmware",
+    "url": "https://github.com/waliori/RP-pico-sit-stand-firmware",
+    "stars": 17,
+    "pushed": "2026-11-02",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "description": "  🪑 Smart Sit-Stand Desk Controller built with Raspberry Pi Pico W and MicroPython. Features WiFi connectivity, web API, OLED display, dual encoder system, and   advanced safety monitoring. Complete open-source hardware and software solution for motorized desk automation.",
+    "languages": [
+      [
+        "Python",
+        100.0
+      ]
+    ],
+    "forks": 1
+  },
+  {
+    "name": "wine-sni-bridge",
+    "url": "https://github.com/waliori/wine-sni-bridge",
+    "stars": 7,
+    "pushed": "2026-05-24",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "description": "Lightweight X11-to-SNI bridge for Wine tray icons on Wayland. Replaces xembedsniproxy without focus-stealing.",
+    "languages": [
+      [
+        "Python",
+        92.3
+      ],
+      [
+        "Nix",
+        7.7
+      ]
+    ],
+    "forks": 3
+  },
+  {
+    "name": "noirwm",
+    "url": "https://github.com/waliori/noirwm",
+    "stars": 1,
+    "pushed": "2026-10-06",
+    "fork": true,
+    "parent": "mangowm/mango",
+    "license": "NOASSERTION",
+    "description": "wayland compositor forked from mangowm",
+    "languages": [
+      [
+        "C",
+        94.1
+      ],
+      [
+        "GLSL",
+        2.3
+      ],
+      [
+        "Nix",
+        2.2
+      ],
+      [
+        "Meson",
+        1.3
+      ],
+      [
+        "Makefile",
+        0.1
+      ],
+      [
+        "Shell",
+        0.0
+      ]
+    ],
+    "forks": 0
+  },
+  {
+    "name": "waybar_peek",
+    "url": "https://github.com/waliori/waybar_peek",
+    "stars": 12,
+    "pushed": "2025-12-28",
+    "fork": false,
+    "parent": null,
+    "license": "MIT",
+    "description": "Toggleable Auto-hide Waybar for Hyprland - shows on cursor hover, hides when windows are open",
+    "languages": [
+      [
+        "Python",
+        100.0
+      ]
+    ],
+    "forks": 2
+  },
+  {
+    "name": "wsl-dotfiles",
+    "url": "https://github.com/waliori/wsl-dotfiles",
+    "stars": 9,
+    "pushed": "2026-11-02",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "description": "WSL dotfiles with dynamic pywal + Starship integration. Auto-sync colors    between Windows PowerShell & WSL. Screenshot-based theming included.",
+    "languages": [
+      [
+        "PowerShell",
+        95.7
+      ],
+      [
+        "Shell",
+        4.3
+      ]
+    ],
+    "forks": 4
+  },
+  {
+    "name": "toucan2",
+    "url": "https://github.com/waliori/toucan2",
+    "stars": 0,
+    "pushed": "2026-11-04",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "description": "Walid, a keyboard layout annealed on my own words: custom letters for the beekeeb Toucan2 split keyboard, standalone ZMK firmware with accent layers and a live key feed, and a browser typing trainer",
+    "languages": [
+      [
+        "HTML",
+        69.5
+      ],
+      [
+        "JavaScript",
+        13.9
+      ],
+      [
+        "CSS",
+        10.1
+      ],
+      [
+        "Python",
+        5.0
+      ],
+      [
+        "Nix",
+        1.1
+      ],
+      [
+        "C",
+        0.4
+      ],
+      [
+        "CMake",
+        0.0
+      ]
+    ],
+    "forks": 0
+  },
+  {
+    "name": "bdo-ship-upgrade-tracker",
+    "url": "https://github.com/waliori/bdo-ship-upgrade-tracker",
+    "stars": 4,
+    "pushed": "2026-11-25",
+    "fork": false,
+    "parent": null,
+    "license": "NOASSERTION",
+    "description": "Plan Black Desert Online ship upgrades against one shared inventory — what every build has reserved, what a part really costs to make, and what you still have to go and get.",
+    "languages": [
+      [
+        "JavaScript",
+        91.6
+      ],
+      [
+        "CSS",
+        7.7
+      ],
+      [
+        "Python",
+        0.3
+      ],
+      [
+        "HTML",
+        0.2
+      ],
+      [
+        "Shell",
+        0.2
+      ],
+      [
+        "Dockerfile",
+        0.1
+      ]
+    ],
+    "forks": 1
+  },
+  {
+    "name": "qurangraph",
+    "url": "https://github.com/waliori/qurangraph",
+    "stars": 1,
+    "pushed": "2026-11-04",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "description": "Interactive force-directed graph of the Qurʾān — explore where the text reuses the same word, lemma (صيغة) and root (جذر). A pure Qurʾān↔Qurʾān lexical research tool. Installable PWA, bilingual Arabic/English.",
+    "languages": [
+      [
+        "JavaScript",
+        93.4
+      ],
+      [
+        "CSS",
+        6.0
+      ],
+      [
+        "HTML",
+        0.4
+      ],
+      [
+        "Dockerfile",
+        0.1
+      ]
+    ],
+    "forks": 0
+  },
+  {
+    "name": "aion2",
+    "url": "https://github.com/waliori/aion2",
+    "stars": 0,
+    "pushed": "2026-11-26",
+    "fork": false,
+    "parent": null,
+    "license": null,
+    "description": "Small tools for AION 2: Ariel Daevanion board route planner",
+    "languages": [
+      [
+        "JavaScript",
+        61.3
+      ],
+      [
+        "HTML",
+        26.7
+      ],
+      [
+        "CSS",
+        11.1
+      ],
+      [
+        "Python",
+        0.7
+      ],
+      [
+        "Shell",
+        0.3
+      ]
+    ],
+    "forks": 0
+  }
 ]
